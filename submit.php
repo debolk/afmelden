@@ -10,7 +10,6 @@ $lidmaatschap=$_POST["lidmaatschap"];
 $vol=$_POST["vol"];
 $donatie=$_POST['donatiebolk'];
 $donatiebedrag=$_POST["bedrag"];
-$grimgram=$_POST['grimgram'];
 $courant=$_POST['courant'];
 $datum=$_POST["datum"];
 $plaats=$_POST["plaats"];
