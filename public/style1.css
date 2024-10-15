@@ -1,14 +1,3 @@
-h1 {
-   color: #800000;
-   font-size: xx-large;
-   margin-top: -0.2cm
-}
-
-body {
-   font: 14px "arial";
-   height: 100%;
-}
-
 html {
    background-image: url("images/BolkvisR.png");
    min-height: 100%;
@@ -21,6 +10,11 @@ html {
    padding: 0;
 }
 
+body {
+   font: 14px "arial";
+   height: 100%;
+}
+
 section {
    width: 65%;
    min-height: 100%;
@@ -31,6 +25,12 @@ section {
    border-color: #800000;
    border-radius: 10px;
    background: #D3D3D3;
+}
+
+h1 {
+   color: #800000;
+   font-size: xx-large;
+   margin-top: -0.2cm
 }
 
 input[type=button],
