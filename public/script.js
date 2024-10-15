@@ -6,30 +6,6 @@ $(document).ready(function () {
 			console.log('pressed enter')
 		}
 	});
-	/*$('#Lid-af formulier').validate({
-		rules: {
-			voornaam: 'required',
-			adres: 'required',
-			postcodeplaats: 'required',
-			telefoon: 'required',
-			email: 'required',
-			lid: 'required',
-			datum: 'required',
-			plaats: 'required',
-			ver:'required',
-		},
-		messages: {
-			voornaam: 'Je moet dit veld invullen',
-			adres: 'Je moet dit veld invullen',
-			postcodeplaats: 'Je moet dit veld invullen',
-			telefoon: 'Je moet dit veld invullen',
-			email: 'Je moet dit veld invullen',
-			lid: 'Je moet dit veld invullen',
-			datum: 'Je moet dit veld invullen',
-			plaats: 'Je moet dit veld invullen',
-			ver:'Je moet dit veld invullen',
-		}
-	});	*/
 	$('#pag2, #pag3, #pag4').hide()
 	$('input[name="lidmaatschap"]').change(function () {
 		if ($(this).val() == "oudlid") {
