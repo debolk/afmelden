@@ -1,36 +1,41 @@
 h1 {
-	color: #800000;
-	font-size: xx-large; 
-	margin-top:-0.2cm
-	
+   color: #800000;
+   font-size: xx-large;
+   margin-top: -0.2cm
 }
-	
-body{font: 14px "arial";
-height:100%;}
-html{
-background-image: url("images/BolkvisR.png"); 
-min-height: 100% ;
-background-position: center;
-background-repeat: repeat;
-background-size: 7% ;
-background-attachment: fixed; 
-min-height: 100%;
-margin:0;
-padding:0;
+
+body {
+   font: 14px "arial";
+   height: 100%;
 }
-section { 
- width  : 65%;
- min-height: 100%;
- margin-left: auto; margin-right: auto;
-padding : 2em; 
-border:5px solid;
-border-color:#800000;
-border-radius:10px;
-background: #D3D3D3;
+
+html {
+   background-image: url("images/BolkvisR.png");
+   min-height: 100%;
+   background-position: center;
+   background-repeat: repeat;
+   background-size: 7%;
+   background-attachment: fixed;
+   min-height: 100%;
+   margin: 0;
+   padding: 0;
 }
-input[type=button], input[type=submit],
+
+section {
+   width: 65%;
+   min-height: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 2em;
+   border: 5px solid;
+   border-color: #800000;
+   border-radius: 10px;
+   background: #D3D3D3;
+}
+
+input[type=button],
+input[type=submit],
 button {
-   
    background: #4a0b0b;
    background: -webkit-gradient(linear, left top, left bottom, from(#800000), to(#4a0b0b));
    background: -webkit-linear-gradient(top, #800000, #4a0b0b);
@@ -41,6 +46,4 @@ button {
    -webkit-border-radius: 11px;
    border-radius: 11px;
    color: white;
-} 
-
-
+}
