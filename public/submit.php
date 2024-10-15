@@ -16,7 +16,7 @@ $plaats=$_POST["plaats"];
 $bedrag="€$donatiebedrag";
 
 $templatesec="Beste Secretaris,
-$naam heeft zich afgemeld. 
+$naam heeft zich afgemeld.
 Gegevens:
 $adres1
 $adres2
@@ -31,7 +31,7 @@ $datum $plaats
 ";
 
 $templatevol="Beste VOL,
-$naam heeft zich afgemeld. 
+$naam heeft zich afgemeld.
 Gegevens:
 $adres1
 $adres2
@@ -43,7 +43,7 @@ $datum $plaats
 ";
 
 $templatethe="Beste Thesaurier,
-$naam heeft zich afgemeld. 
+$naam heeft zich afgemeld.
 Gegevens:
 $adres1
 $adres2
