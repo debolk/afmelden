@@ -1,5 +1,4 @@
 <?php
-/*print_r($_POST);*/
 print("Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn krijg je een lid-afbevestiging via de post.");
 $naam=$_POST["voornaam"];
 $adres1=$_POST["adres"];
