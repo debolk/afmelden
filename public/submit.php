@@ -61,9 +61,3 @@ mail ('Secretaris <secretaris@nieuwedelft.nl>', 'Lid-af formulier', "$templatese
 mail ('VOL <vol@nieuwedelft.nl>', 'Lid-af formulier', "$templatevol",'Lid-af formulier', "-f " . ' secretaris@nieuwedelft.nl');
 
 mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', "$templatethe",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
-
-
-
-?>
-
-
