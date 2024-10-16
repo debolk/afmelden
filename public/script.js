@@ -12,26 +12,26 @@ $(document).ready(function () {
 	// Virtual page navigation
 	$('#pag2, #pag3, #pag4').hide();
 
-	$('input[name="lidmaatschap"]').change(function () {
-		if ($(this).val() == "oudlid") {
-			$('#topage2').click(function () {
-				$("#pag1, #pag3").hide();
-				$("#pag2").show();
-			});
-			$('#3topage2').click(function () {
-				$("#pag2").show();
-				$("#pag3").hide();
-			});
+
+	$('#topage2').click(function () {
+		// Skip page 2 if user becomes oud-lid
+		if ($('input[name="lidmaatschap"]').val() === 'oudlid') {
+			$("#pag1, #pag3").hide();
+			$("#pag2").show();
+		} else {
+			$("#pag1, #pag2").hide();
+			$("#pag3").show();
 		}
-		else {
-			$('#topage2').click(function () {
-				$("#pag1, #pag2").hide();
-				$("#pag3").show();
-			});
-			$('#3topage2').click(function () {
-				$("#pag1").show();
-				$("#pag3, #pag2").hide();
-			});
+	});
+
+	$('#3topage2').click(function () {
+		// Skip page 2 if user becomes oud-lid
+		if ($('input[name="lidmaatschap"]').val() === 'oudlid') {
+			$("#pag2").show();
+			$("#pag3").hide();
+		} else {
+			$("#pag1").show();
+			$("#pag3, #pag2").hide();
 		}
 	});
 
