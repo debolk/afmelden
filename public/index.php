@@ -104,7 +104,7 @@
 				<h2> Verklaring </h2> <br>
 
 				<p><label>Datum <br>
-						<input type="text" id="datum" name="datum" value=today> </label></p>
+						<input type="date" id="datum" name="datum" value="<?= date('Y-M-D') ?>"> </label></p>
 				<p><label>Plaats* <br>
 						<input type="text" name="plaats"></label></p><br>
 				<p><label>
