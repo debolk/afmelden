@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+	// Prevent early form submission using enter key
 	$(document).keypress(function (e) {
 		var charCode = e.charCode || e.keyCode || e.which;
 		if (charCode == 13) {
@@ -6,7 +8,10 @@ $(document).ready(function () {
 			console.log('pressed enter')
 		}
 	});
-	$('#pag2, #pag3, #pag4').hide()
+
+	// Virtual page navigation
+	$('#pag2, #pag3, #pag4').hide();
+
 	$('input[name="lidmaatschap"]').change(function () {
 		if ($(this).val() == "oudlid") {
 			$('#topage2').click(function () {
@@ -29,10 +34,12 @@ $(document).ready(function () {
 			});
 		}
 	});
+
 	$('#2topage1').click(function () {
 		$("#pag1").show();
 		$("#pag2").hide();
 	});
+
 	$('#2topage3').click(function () {
 		$("#pag3").show();
 		$("#pag2").hide();
