@@ -16,10 +16,6 @@
 <body>
 	<form name="Lid-af formulier" id="Lid-af formulier" method="post" action="submit.php">
 
-		<!-- hCaptcha spam protection -->
-		<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-		<div class="h-captcha" data-sitekey="<?= $_ENV['HCAPTCHA_SITEKEY']; ?>"></div>
-
 		<section id="pag1">
 			<h1> Lid-af formulier </h1>
 			Beste Bolker, <br>
@@ -114,6 +110,11 @@
 				<p><label>
 						<input id="ver" type="checkbox" value="ja">Ik verklaar hierbij dat ik dit formulier naar
 						waarheid heb ingevuld.* </label>
+				</p>
+				<p>
+					<!-- hCaptcha spam protection -->
+					<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+					<div class="h-captcha" data-sitekey="<?= $_ENV['HCAPTCHA_SITEKEY']; ?>"></div>
 				</p>
 				<input type="button" id="3topage2" value="Terug" />
 				<input type="submit" name="verstuur" id="stuur" value="Verstuur formulier" />
