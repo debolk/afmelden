@@ -107,10 +107,6 @@
 						<input type="date" id="datum" name="datum" value="<?= date('Y-M-D') ?>"> </label></p>
 				<p><label>Plaats* <br>
 						<input type="text" name="plaats">Delft</label></p><br>
-				<p><label>
-						<input id="ver" type="checkbox" value="ja">Ik verklaar hierbij dat ik dit formulier naar
-						waarheid heb ingevuld.* </label>
-				</p>
 				<p>
 					<!-- hCaptcha spam protection -->
 					<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
