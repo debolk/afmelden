@@ -2,6 +2,19 @@
 
 require_once __DIR__ . '/../bootstrap.php';
 
+/*
+ * Validate hCaptcha challenge
+ */
+$hCaptcha = new \HCaptcha\hCaptcha($_ENV['HCAPTCHA_SECRET']);
+$hCaptchaResponse = $hCaptcha->verify($_POST['h-captcha-response']);
+if (!$hCaptchaResponse->isSuccess()) {
+    echo "Failed hCaptcha challenge";
+    exit;
+}
+
+/*
+ * Send emails with the form data
+ */
 print("Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn krijg je een lid-afbevestiging via de post.");
 $naam=$_POST["voornaam"];
 $adres1=$_POST["adres"];
