@@ -45,39 +45,42 @@
 						<input type='radio' name='lidmaatschap' value='oudlid' />Oud-lid</label>
 				</p>
 			</div>
-			<!--Vol lid worden -->
-			<div id="vol">
-
-				<h2> Wil je lid worden van de Vereniging Oud Leden? </h2> <br>
-				De VOL is opgericht voor oud-leden en streeft ernaar om het contact tussen oud-leden onderling en met
-				D.S.V. "Nieuwe Delft" te bevorderen. Daarnaast heeft zij als doelen het in stand houden van de historie
-				van D.S.V. "Nieuwe Delft" en waar mogelijk te ondersteunen. De VOL organiseert een aantal borrels voor
-				oud-leden en heeft daaarnaast een fonds opgericht waaruit schenkingen aan D.S.V. "Nieuwe Delft" kunnen
-				worden gedaan. De contributie voor de VOL bedraagt €15,- per jaar.
-
-				<p>
-					Wil je lid worden van de VOL? <br>
-					<label>
-						<input type="radio" name="vol" value="ja">Ja</label><br>
-					<label>
-						<input type="radio" name="vol" value="nee">Nee</label>
-				</p>
-			</div>
 			<input type="button" id="topage2" value="Doorgaan" /> *Beantwoord in ieder geval deze vragen.
 		</section>
 
 
 		<!-- Oud-lid -->
 		<section id="pag2">
-			<h2> Oud-lid </h2>
-			Je hebt aangegeven dat je oud-lid wilt worden. <br>
-			<p><b>Wil je op de hoogte blijven van de nieuws en gebeurtenissen op de Bolk?</b><br>
+			<h1> Oud-lid </h1>
+			<p>
+				Je hebt aangegeven dat je oud-lid wilt worden.
+			</p>
+			<h3>Wil je op de hoogte blijven van de nieuws en gebeurtenissen op de Bolk?</b></h3>
+			<p>
 				<label>
 					<input type="checkbox" name="courant" value="courant">Ja ik wil de Bolksche Courant blijven
 					ontvangen</label>
 			</p>
 
-			<b> Wil je doneren aan de Bolk? </b>
+			<!--Vol lid worden -->
+			<h2> Wil je lid worden van de Vereniging Oud Leden?</h2>
+			<p>
+				De VOL is opgericht voor oud-leden en streeft ernaar om het contact tussen oud-leden onderling en met
+				D.S.V. "Nieuwe Delft" te bevorderen. Daarnaast heeft zij als doelen het in stand houden van de historie
+				van D.S.V. "Nieuwe Delft" en waar mogelijk te ondersteunen. De VOL organiseert een aantal borrels voor
+				oud-leden en heeft daaarnaast een fonds opgericht waaruit schenkingen aan D.S.V. "Nieuwe Delft" kunnen
+				worden gedaan. De contributie voor de VOL bedraagt €15,- per jaar.
+			</p>
+
+			<p>
+				Wil je lid worden van de VOL? <br>
+				<label>
+					<input type="radio" name="vol" value="ja">Ja</label><br>
+				<label>
+					<input type="radio" name="vol" value="nee">Nee</label>
+			</p>
+
+			<h2> Wil je doneren aan de Bolk? </h2>
 			<p style="color:grey"> Het is mogelijk om de vereniging financieel te blijven steunen. Een donatie zal
 				worden aangewend om activiteiten te organiseren en de soci&euml;teit te onderhouden. De donatie zal per
 				kwartaal worden afgeschreven. </p><br>
