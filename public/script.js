@@ -56,6 +56,9 @@ $(document).ready(function () {
 			success: function (data) {
 				$('#pag3').hide();
 				$('#pag4').show();
+			},
+			error: function (data) {
+				alert('Er is iets misgegaan. Je afmelding is niet verwerkt. Mogelijk heb je de captcha niet ingevuld? Probeer het opnieuw. \n\nAls het probleem blijft bestaan, neem dan contact op met het bestuur via bestuur@nieuwedelft.nl of 015-212 60 r12.');
 			}
 		});
 	});

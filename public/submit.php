@@ -8,6 +8,7 @@ require_once __DIR__ . '/../bootstrap.php';
 $hCaptcha = new \HCaptcha\hCaptcha($_ENV['HCAPTCHA_SECRET']);
 $hCaptchaResponse = $hCaptcha->verify($_POST['h-captcha-response']);
 if (!$hCaptchaResponse->isSuccess()) {
+    http_response_code(400);
     echo "Failed hCaptcha challenge";
     exit;
 }
