@@ -12,7 +12,6 @@ $(document).ready(function () {
 	// Virtual page navigation
 	$('#pag2, #pag3, #pag4').hide();
 
-
 	$('#topage2').click(function () {
 		// Skip page 2 if user becomes ex-lid
 		if ($('input[name="lidmaatschap"]:checked').val() === 'oudlid') {
@@ -43,5 +42,21 @@ $(document).ready(function () {
 	$('#2topage3').click(function () {
 		$("#pag3").show();
 		$("#pag2").hide();
+	});
+
+	// Form submission using AJAX
+	$('#lid-af-form').submit(function (e) {
+		e.preventDefault();
+		var form = $(this);
+
+		$.ajax({
+			type: form.attr('method'),
+			url: form.attr('action'),
+			data: form.serialize(), // serializes the form's elements.
+			success: function (data) {
+				$('#pag3').hide();
+				$('#pag4').show();
+			}
+		});
 	});
 });

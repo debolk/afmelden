@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<form name="Lid-af formulier" id="Lid-af formulier" method="post" action="submit.php">
+	<form name="lid-af-form" id="lid-af-form" method="post" action="submit.php">
 
 		<section id="pag1">
 			<h1> Lid-af formulier </h1>
@@ -123,7 +123,7 @@
 		<section id="pag4">
 			<div id="eind">
 				<p>
-					Bedankt voor het invullen van dit formulier
+				Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging via de post.
 				</p>
 			</div>
 		</section>
