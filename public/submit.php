@@ -24,8 +24,9 @@ $telefoon=$_POST["telefoon"];
 $mail=$_POST["email"];
 $lidmaatschap=$_POST["lidmaatschap"];
 $vol=$_POST["vol"];
-$donatie=$_POST['donatiebolk'];
+$donatie=$_POST['donatie'];
 $donatiebedrag=$_POST["bedrag"];
+$donatiebestemming=$_POST["donatiebestemming"];
 $courant=$_POST['courant'];
 $datum=$_POST["datum"];
 $plaats=$_POST["plaats"];
@@ -40,7 +41,9 @@ $telefoon
 $mail
 Lidmaatschap: $lidmaatschap
 VOL: $vol
-Donatie: $donatie $bedrag
+Donatie: $donatie
+Donatiebedrag: $bedrag
+Donatiebestemming: $donatiebestemming
 $grimgram
 $courant
 $datum $plaats
@@ -55,6 +58,9 @@ $telefoon
 $mail
 Lidmaatschap: $lidmaatschap
 VOL: $vol
+Donatie: $donatie
+Donatiebedrag: $bedrag
+Donatiebestemming: $donatiebestemming
 $datum $plaats
 ";
 
@@ -66,7 +72,9 @@ $adres2
 $telefoon
 $mail
 Lidmaatschap: $lidmaatschap
-Donatie: $donatie $bedrag
+Donatie: $donatie
+Donatiebedrag: $bedrag
+Donatiebestemming: $donatiebestemming
 $datum $plaats
 ";
 

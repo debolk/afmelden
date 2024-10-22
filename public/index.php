@@ -81,21 +81,34 @@
 			</p>
 
 			<h2> Wil je doneren aan de Bolk? </h2>
-			<p style="color:grey"> Het is mogelijk om de vereniging financieel te blijven steunen. Een donatie zal
-				worden aangewend om activiteiten te organiseren en de soci&euml;teit te onderhouden. De donatie zal per
-				kwartaal worden afgeschreven. </p><br>
-			<label>
-				<input type="radio" name="donatiebolk" value="ja">Ja ik wil doneren aan de D.S.V. "Nieuwe Delft"
-			</label><br>
-
-			<div>
-				<p>Namelijk een bedrag van <br>
-					<input type="text" name="bedrag" /> euro per kwartaal
-				</p>
+			<p> Het is mogelijk om de vereniging financieel te blijven steunen. De donatie wordt ieder kwartaal afgeschreven.
+				Je kunt je donatie op ieder moment stoppen, het bedrag aanpassen of de bestemming veranderen. </p>
+			<p>
 				<label>
-					<input type="radio" name="donatiebolk" value="nee">Nee </label>
-			</div>
-			<br>
+					<input type="hidden" name="donatie" value="nee">
+					<input type="checkbox" name="donatie" value="ja"> Ja, ik wil graag doneren.
+				</label><br>
+			</p>
+
+			<p>
+				<label for="bedrag">
+					Namelijk
+					<input type="text" name="bedrag" value="40" style="width: 2em;" /> euro per kwartaal
+				</label>
+			</p>
+
+			<p>
+				Je kunt direct aan De Bolk doneren. Jouw donatie zal worden aangewend om activiteiten te organiseren en de soci&euml;teit te onderhouden.
+				Of je kunt doneren aan het fonds van de VOL. De donatie wordt dan gebruikt om de verening op lange termijn te ondersteunen en te beschermen.
+				In beide gevallen komt je donatie 100% ten goede aan De Bolk.
+			</p>
+			<p>
+				<label for="donatiebestemming">
+					<input type="radio" name="donatiebestemming" value="Bolk" checked> Ik wil doneren aan De Bolk. <br>
+					<input type="radio" name="donatiebestemming" value="VOL"> Ik wil doneren aan het VOL-fonds.
+				</label>
+			</p>
+
 			<input type="button" id="2topage1" value="Terug" />
 			<input type="button" id="2topage3" value="Doorgaan" />
 		</section>
