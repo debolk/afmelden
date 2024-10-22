@@ -9,39 +9,32 @@ $(document).ready(function () {
 		}
 	});
 
-	// Virtual page navigation
-	$('#pag2, #pag3, #pag4').hide();
+	goToPage(1);
 
 	$('#topage2').click(function () {
 		// Skip page 2 if user becomes ex-lid
 		if ($('input[name="lidmaatschap"]:checked').val() === 'oudlid') {
-			$("#pag1, #pag3").hide();
-			$("#pag2").show();
+			goToPage(2);
 		} else {
-			$("#pag1, #pag2").hide();
-			$("#pag3").show();
+			goToPage(3);
 		}
 	});
 
 	$('#3topage2').click(function () {
 		// Skip page 2 if user becomes ex-lid
 		if ($('input[name="lidmaatschap"]:checked').val() === 'oudlid') {
-			$("#pag2").show();
-			$("#pag3").hide();
+			goToPage(2);
 		} else {
-			$("#pag1").show();
-			$("#pag3, #pag2").hide();
+			goToPage(1);
 		}
 	});
 
 	$('#2topage1').click(function () {
-		$("#pag1").show();
-		$("#pag2").hide();
+		goToPage(1);
 	});
 
 	$('#2topage3').click(function () {
-		$("#pag3").show();
-		$("#pag2").hide();
+		goToPage(3);
 	});
 
 	// Form submission using AJAX
@@ -54,8 +47,7 @@ $(document).ready(function () {
 			url: form.attr('action'),
 			data: form.serialize(), // serializes the form's elements.
 			success: function (data) {
-				$('#pag3').hide();
-				$('#pag4').show();
+				goToPage(4);
 			},
 			error: function (data) {
 				alert('Er is iets misgegaan. Je afmelding is niet verwerkt. Mogelijk heb je de captcha niet ingevuld? Probeer het opnieuw. \n\nAls het probleem blijft bestaan, neem dan contact op met het bestuur via bestuur@nieuwedelft.nl of 015-212 60 r12.');
@@ -63,3 +55,8 @@ $(document).ready(function () {
 		});
 	});
 });
+
+function goToPage(number) {
+	$('#pag1, #pag2, #pag3, #pag4').hide();
+	$('#pag' + number).show();
+}
