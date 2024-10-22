@@ -14,8 +14,8 @@ $(document).ready(function () {
 
 
 	$('#topage2').click(function () {
-		// Skip page 2 if user becomes oud-lid
-		if ($('input[name="lidmaatschap"]').val() === 'oudlid') {
+		// Skip page 2 if user becomes ex-lid
+		if ($('input[name="lidmaatschap"]:checked').val() === 'oudlid') {
 			$("#pag1, #pag3").hide();
 			$("#pag2").show();
 		} else {
@@ -25,8 +25,8 @@ $(document).ready(function () {
 	});
 
 	$('#3topage2').click(function () {
-		// Skip page 2 if user becomes oud-lid
-		if ($('input[name="lidmaatschap"]').val() === 'oudlid') {
+		// Skip page 2 if user becomes ex-lid
+		if ($('input[name="lidmaatschap"]:checked').val() === 'oudlid') {
 			$("#pag2").show();
 			$("#pag3").hide();
 		} else {
