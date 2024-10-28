@@ -93,7 +93,7 @@
 			<p>
 				<label for="bedrag">
 					Namelijk
-					<input type="text" name="bedrag" value="45" style="width: 2em;" /> euro per kwartaal
+					<input type="text" name="bedrag" id="bedrag" value="45" style="width: 2em;" /> euro per kwartaal
 				</label>
 			</p>
 
@@ -106,7 +106,24 @@
 				<input type="radio" name="donatiebestemming" id="dbb" value="Bolk" checked>
 				<label for="dbb">Ik wil doneren aan De Bolk.</label> <br>
 				<input type="radio" name="donatiebestemming" id="dbv" value="VOL">
-				<label for="dbv">Ik wil doneren aan het VOL-fonds.</label>
+				<label for="dbv">Ik wil doneren aan het VOL-fonds.</label> <br>
+				<input type="radio" name="donatiebestemming" id="dbd" value="Verdeeld">
+				<label for="dbd">Ik wil het verdelen tussen De Bolk en het VOL-fonds,</label>
+
+				<span id="donatieverdeling-subform" style="display: block">
+					namelijk De Bolk <span id="donatieverdeling-bolkdeel">23</span> euro
+					<input
+						type="range"
+						name="donatieverdeling"
+						id="donatieverdeling"
+						min="0"
+						max="45"
+						value="23"
+						step="1"
+						disabled
+						style="vertical-align: middle;" />
+					VOL-fonds <span id="donatieverdeling-voldeel">22</span> euro
+				</span>
 			</p>
 
 			<input type="button" id="2topage1" value="Terug" />

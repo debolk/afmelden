@@ -25,8 +25,11 @@ $mail=$_POST["email"];
 $lidmaatschap=$_POST["lidmaatschap"];
 $vol=$_POST["vol"];
 $donatie=$_POST['donatie'];
-$donatiebedrag=$_POST["bedrag"];
+$donatiebedrag=intval($_POST["bedrag"]);
 $donatiebestemming=$_POST["donatiebestemming"];
+$donatieverdelingBolk=$_POST["donatieverdeling"];
+$donatieverdelingVOL=intval($_POST["bedrag"]) - intval($_POST["donatieverdeling"]);
+$donatieVerdelingTekst = $donatiebestemming == 'Verdeeld' ? "Bolk " . $donatieverdelingBolk . " VOL " . $donatieverdelingVOL : "n.v.t.";
 $courant=$_POST['courant'];
 $datum=$_POST["datum"];
 $plaats=$_POST["plaats"];
@@ -44,6 +47,7 @@ VOL: $vol
 Donatie: $donatie
 Donatiebedrag: $bedrag
 Donatiebestemming: $donatiebestemming
+Donatieverdeling: $donatieVerdelingTekst
 $grimgram
 $courant
 $datum $plaats
@@ -61,6 +65,7 @@ VOL: $vol
 Donatie: $donatie
 Donatiebedrag: $bedrag
 Donatiebestemming: $donatiebestemming
+Donatieverdeling: $donatieVerdelingTekst
 $datum $plaats
 ";
 
@@ -75,6 +80,7 @@ Lidmaatschap: $lidmaatschap
 Donatie: $donatie
 Donatiebedrag: $bedrag
 Donatiebestemming: $donatiebestemming
+Donatieverdeling: $donatieVerdelingTekst
 $datum $plaats
 ";
 

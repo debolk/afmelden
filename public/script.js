@@ -9,6 +9,7 @@ $(document).ready(function () {
 		}
 	});
 
+	// Page navigation
 	goToPage(1);
 
 	$('#topage2').click(function () {
@@ -35,6 +36,27 @@ $(document).ready(function () {
 
 	$('#2topage3').click(function () {
 		goToPage(3);
+	});
+
+	// Donation distrubution sub-form
+	$('#bedrag').change(function () {
+		var donation = parseInt($(this).val());
+		$('#donatieverdeling').attr('max', donation);
+		$('#donatieverdeling').val(Math.round(donation / 2));
+		$('#donatieverdeling').trigger('input');
+	});
+
+	$('[name="donatiebestemming"]').change(function () {
+		var bestemming = $('[name="donatiebestemming"]:checked').val();
+		$('#donatieverdeling').attr('disabled', bestemming !== 'Verdeeld');
+	})
+
+	$('#donatieverdeling').on('input', function () {
+		var distribution = parseInt($(this).val());
+		var max = parseInt($(this).attr('max'));
+
+		$('#donatieverdeling-bolkdeel').html(distribution);
+		$('#donatieverdeling-voldeel').html(max - distribution);
 	});
 
 	// Form submission using AJAX
