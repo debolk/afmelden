@@ -103,10 +103,10 @@
 				In beide gevallen komt je donatie 100% ten goede aan De Bolk.
 			</p>
 			<p>
-				<label for="donatiebestemming">
-					<input type="radio" name="donatiebestemming" value="Bolk" checked> Ik wil doneren aan De Bolk. <br>
-					<input type="radio" name="donatiebestemming" value="VOL"> Ik wil doneren aan het VOL-fonds.
-				</label>
+				<input type="radio" name="donatiebestemming" id="dbb" value="Bolk" checked>
+				<label for="dbb">Ik wil doneren aan De Bolk.</label> <br>
+				<input type="radio" name="donatiebestemming" id="dbv" value="VOL">
+				<label for="dbv">Ik wil doneren aan het VOL-fonds.</label>
 			</p>
 
 			<input type="button" id="2topage1" value="Terug" />
