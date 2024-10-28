@@ -71,7 +71,7 @@ $(document).ready(function () {
 			success: function (data) {
 				goToPage(4);
 				// Show donation message if donation is for the VOL
-				if ($('input[name="donatiebestemming"]:checked').val() === 'VOL') {
+				if ($('input[name="donatiebestemming"]:checked').val() !== 'Bolk') {
 					$('#donatie-vol').show();
 				}
 			},
