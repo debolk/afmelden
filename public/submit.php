@@ -16,7 +16,7 @@ if (!$hCaptchaResponse->isSuccess()) {
 /*
  * Send emails with the form data
  */
-print("Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging via de post.");
+print("Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.");
 $naam=$_POST["voornaam"];
 $adres1=$_POST["adres"];
 $adres2=$_POST["postcodeplaats"];

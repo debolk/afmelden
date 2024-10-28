@@ -139,7 +139,7 @@
 		<section id="pag4">
 			<div id="eind">
 				<p>
-				Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging via de post.
+				Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.
 				</p>
 			</div>
 		</section>
