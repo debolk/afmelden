@@ -93,7 +93,7 @@
 			<p>
 				<label for="bedrag">
 					Namelijk
-					<input type="text" name="bedrag" value="40" style="width: 2em;" /> euro per kwartaal
+					<input type="text" name="bedrag" value="45" style="width: 2em;" /> euro per kwartaal
 				</label>
 			</p>
 
