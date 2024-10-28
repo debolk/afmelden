@@ -1,5 +1,6 @@
 html {
    background-image: url("images/BolkvisR.png");
+   background-color: rgba(128, 128, 128, 0.99);
    min-height: 100%;
    background-position: center;
    background-repeat: repeat;
