@@ -48,7 +48,6 @@ Donatie: $donatie
 Donatiebedrag: $bedrag
 Donatiebestemming: $donatiebestemming
 Donatieverdeling: $donatieVerdelingTekst
-$grimgram
 $courant
 $datum $plaats
 ";
