@@ -48,6 +48,10 @@ $(document).ready(function () {
 			data: form.serialize(), // serializes the form's elements.
 			success: function (data) {
 				goToPage(4);
+				// Show donation message if donation is for the VOL
+				if ($('input[name="donatiebestemming"]:checked').val() === 'VOL') {
+					$('#donatie-vol').show();
+				}
 			},
 			error: function (data) {
 				alert('Er is iets misgegaan. Je afmelding is niet verwerkt. Mogelijk heb je de captcha niet ingevuld? Probeer het opnieuw. \n\nAls het probleem blijft bestaan, neem dan contact op met het bestuur via bestuur@nieuwedelft.nl of 015-212 60 r12.');

@@ -143,10 +143,12 @@
 					Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.
 				</p>
 
-				<h2>Donatie VOL</h2>
-				<p>
-					Tof dat je wil doneren aan het VOL-fonds. Meer info over het Fonds vind je op <a href="https://vol.debolk.nl/fonds/">de fondspagina op de website van de VOL</a>. Voor je donatie en VOL-contributie kun je <a href="https://vol.debolk.nl/fonds/">een automatisch incasso instellen</a>.
-				</p>
+				<div id="donatie-vol" style="display: none;">
+					<h2>Donatie VOL</h2>
+					<p>
+						Tof dat je wil doneren aan het VOL-fonds. Meer info over het Fonds vind je op <a href="https://vol.debolk.nl/fonds/">de fondspagina op de website van de VOL</a>. Voor je donatie en VOL-contributie kun je <a href="https://vol.debolk.nl/fonds/">een automatisch incasso instellen</a>.
+					</p>
+				</div>
 			</div>
 		</section>
 
