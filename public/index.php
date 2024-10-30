@@ -98,9 +98,10 @@
 			</p>
 
 			<p>
-				Je kunt direct aan De Bolk doneren. Jouw donatie zal worden aangewend om activiteiten te organiseren en de soci&euml;teit te onderhouden.
-				Of je kunt doneren aan het fonds van de VOL. De donatie wordt dan gebruikt om de verening op lange termijn te ondersteunen en te beschermen.
-				In beide gevallen komt je donatie 100% ten goede aan De Bolk.
+				Je kunt direct aan De Bolk doneren. Jouw donatie zal worden aangewend om activiteiten te organiseren
+				en de soci&euml;teit te onderhouden. Of je kunt doneren aan het fonds van de VOL. De donatie wordt dan
+				gebruikt om de verening op lange termijn te ondersteunen en te beschermen. In beide gevallen komt je
+				donatie 100% ten goede aan De Bolk. De Bolk incasseert de donaties elk kwartaal, de VOL jaarlijks.
 			</p>
 			<p>
 				<input type="radio" name="donatiebestemming" id="dbb" value="Bolk" checked>
