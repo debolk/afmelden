@@ -2,7 +2,7 @@
 Simple web form for processing desubscription requests from the society.
 
 ## Deployment
-1. Requires PHP, web server, composer.
+1. Requires PHP, web server, composer, php-curl.
 1. Clone repository.
 1. Run `composer install`.
 1. Copy `.env.example` to `.env` and fill in the details.
