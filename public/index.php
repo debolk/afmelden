@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="style.css" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="icon" href="favicon.ico" />
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.js"></script>
 	<script type='text/javascript' src='script.js'></script>
 	<title>Lid-af formulier</title>
 </head>
