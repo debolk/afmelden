@@ -16,7 +16,6 @@ if (!$hCaptchaResponse->isSuccess()) {
 /*
  * Send emails with the form data
  */
-print("Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.");
 $naam=$_POST["voornaam"];
 $adres1=$_POST["adres"];
 $adres2=$_POST["postcodeplaats"];
@@ -88,3 +87,6 @@ mail ('Secretaris <secretaris@nieuwedelft.nl>', 'Lid-af formulier', "$templatese
 mail ('VOL <vol@nieuwedelft.nl>', 'Lid-af formulier', "$templatevol",'Lid-af formulier', "-f " . ' secretaris@nieuwedelft.nl');
 
 mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', "$templatethe",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
+
+// Send response
+echo 'Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.';
