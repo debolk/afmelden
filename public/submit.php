@@ -2,11 +2,6 @@
 
 require_once __DIR__ . '/../bootstrap.php';
 
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
-die;
-
 /*
  * Validate hCaptcha challenge
  */
