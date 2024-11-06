@@ -22,8 +22,8 @@ if (!$hCaptchaResponse->isSuccess()) {
  * Send emails with the form data
  */
 $naam=$_POST["voornaam"] ?? 'niet ingevuld';
-$adres1=$_POST["adres"] ?? 'niet ingevuld';
-$adres2=$_POST["postcodeplaats"] ?? 'niet ingevuld';
+$adres=$_POST["adres"] ?? 'niet ingevuld';
+$postcodeplaats=$_POST["postcodeplaats"] ?? 'niet ingevuld';
 $telefoon=$_POST["telefoon"] ?? 'niet ingevuld';
 $mail=$_POST["email"] ?? 'niet ingevuld';
 $lidmaatschap=$_POST["lidmaatschap"] ?? 'niet ingevuld';
@@ -42,8 +42,8 @@ $bedrag="€$donatiebedrag" ?? 'niet ingevuld';
 $templatesec="Beste Secretaris,
 $naam heeft zich afgemeld.
 Gegevens:
-$adres1
-$adres2
+$adres
+$postcodeplaats
 $telefoon
 $mail
 Lidmaatschap: $lidmaatschap
@@ -59,8 +59,8 @@ $datum $plaats
 $templatevol="Beste VOL,
 $naam heeft zich afgemeld.
 Gegevens:
-$adres1
-$adres2
+$adres
+$postcodeplaats
 $telefoon
 $mail
 Lidmaatschap: $lidmaatschap
@@ -75,8 +75,8 @@ $datum $plaats
 $templatethe="Beste Thesaurier,
 $naam heeft zich afgemeld.
 Gegevens:
-$adres1
-$adres2
+$adres
+$postcodeplaats
 $telefoon
 $mail
 Lidmaatschap: $lidmaatschap
