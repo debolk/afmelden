@@ -2,6 +2,11 @@
 
 require_once __DIR__ . '/../bootstrap.php';
 
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
+die;
+
 /*
  * Validate hCaptcha challenge
  */
@@ -16,23 +21,23 @@ if (!$hCaptchaResponse->isSuccess()) {
 /*
  * Send emails with the form data
  */
-$naam=$_POST["voornaam"];
-$adres1=$_POST["adres"];
-$adres2=$_POST["postcodeplaats"];
-$telefoon=$_POST["telefoon"];
-$mail=$_POST["email"];
-$lidmaatschap=$_POST["lidmaatschap"];
-$vol=$_POST["vol"];
-$donatie=$_POST['donatie'];
-$donatiebedrag=intval($_POST["bedrag"]);
-$donatiebestemming=$_POST["donatiebestemming"];
-$donatieverdelingBolk=$_POST["donatieverdeling"];
+$naam=$_POST["voornaam"] ?? 'niet ingevuld';
+$adres1=$_POST["adres"] ?? 'niet ingevuld';
+$adres2=$_POST["postcodeplaats"] ?? 'niet ingevuld';
+$telefoon=$_POST["telefoon"] ?? 'niet ingevuld';
+$mail=$_POST["email"] ?? 'niet ingevuld';
+$lidmaatschap=$_POST["lidmaatschap"] ?? 'niet ingevuld';
+$vol=$_POST["vol"] ?? 'niet ingevuld';
+$donatie=$_POST['donatie'] ?? 'niet ingevuld';
+$donatiebedrag=intval($_POST["bedrag"]) ?? 'niet ingevuld';
+$donatiebestemming=$_POST["donatiebestemming"] ?? 'niet ingevuld';
+$donatieverdelingBolk=$_POST["donatieverdeling"] ?? 'niet ingevuld';
 $donatieverdelingVOL=intval($_POST["bedrag"]) - intval($_POST["donatieverdeling"]);
 $donatieVerdelingTekst = $donatiebestemming == 'Verdeeld' ? "Bolk " . $donatieverdelingBolk . " VOL " . $donatieverdelingVOL : "n.v.t.";
-$courant=$_POST['courant'];
-$datum=$_POST["datum"];
-$plaats=$_POST["plaats"];
-$bedrag="€$donatiebedrag";
+$courant=$_POST['courant'] ?? 'niet ingevuld';
+$datum=$_POST["datum"] ?? 'niet ingevuld';
+$plaats=$_POST["plaats"] ?? 'niet ingevuld';
+$bedrag="€$donatiebedrag" ?? 'niet ingevuld';
 
 $templatesec="Beste Secretaris,
 $naam heeft zich afgemeld.
