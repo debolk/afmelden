@@ -91,6 +91,9 @@ $resultT = mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', "
 if (!$resultS || !$resultV || !$resultT) {
     http_response_code(500);
     echo "Failed to send all three emails";
+    echo '<pre>';
+    echo error_get_last();
+    echo '</pre>';
     exit;
 }
 
