@@ -82,11 +82,17 @@ Donatieverdeling: $donatieVerdelingTekst
 $datum $plaats
 ";
 
-mail ('Secretaris <secretaris@nieuwedelft.nl>', 'Lid-af formulier', "$templatesec",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
+// Send emails
+$resultS = mail ('Secretaris <secretaris@nieuwedelft.nl>', 'Lid-af formulier', "$templatesec",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
+$resultV = mail ('VOL <vol@nieuwedelft.nl>', 'Lid-af formulier', "$templatevol",'Lid-af formulier', "-f " . ' secretaris@nieuwedelft.nl');
+$resultT = mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', "$templatethe",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
 
-mail ('VOL <vol@nieuwedelft.nl>', 'Lid-af formulier', "$templatevol",'Lid-af formulier', "-f " . ' secretaris@nieuwedelft.nl');
-
-mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', "$templatethe",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
+// Verify that all emails were sent
+if (!$resultS || !$resultV || !$resultT) {
+    http_response_code(500);
+    echo "Failed to send all three emails";
+    exit;
+}
 
 // Send response
 echo 'Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.';
