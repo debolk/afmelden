@@ -34,7 +34,7 @@ $datum=$_POST["datum"] ?? 'niet ingevuld';
 $plaats=$_POST["plaats"] ?? 'niet ingevuld';
 $bedrag="€$donatiebedrag" ?? 'niet ingevuld';
 
-$templatesec="Beste Secretaris,
+$email="Beste Secretaris,
 $naam heeft zich afgemeld.
 Gegevens:
 $adres
@@ -51,41 +51,10 @@ $courant
 $datum $plaats
 ";
 
-$templatevol="Beste VOL,
-$naam heeft zich afgemeld.
-Gegevens:
-$adres
-$postcodeplaats
-$telefoon
-$mail
-Lidmaatschap: $lidmaatschap
-VOL: $vol
-Donatie: $donatie
-Donatiebedrag: $bedrag
-Donatiebestemming: $donatiebestemming
-Donatieverdeling: $donatieVerdelingTekst
-$datum $plaats
-";
-
-$templatethe="Beste Thesaurier,
-$naam heeft zich afgemeld.
-Gegevens:
-$adres
-$postcodeplaats
-$telefoon
-$mail
-Lidmaatschap: $lidmaatschap
-Donatie: $donatie
-Donatiebedrag: $bedrag
-Donatiebestemming: $donatiebestemming
-Donatieverdeling: $donatieVerdelingTekst
-$datum $plaats
-";
-
 // Send emails
-$resultS = mail ('Secretaris <secretaris@nieuwedelft.nl>', 'Lid-af formulier', "$templatesec",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
-$resultV = mail ('VOL <vol@nieuwedelft.nl>', 'Lid-af formulier', "$templatevol",'Lid-af formulier', "-f " . ' secretaris@nieuwedelft.nl');
-$resultT = mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', "$templatethe",'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
+$resultS = mail ('Secretaris <secretaris@nieuwedelft.nl>', 'Lid-af formulier', $email,'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
+$resultV = mail ('VOL <vol@nieuwedelft.nl>', 'Lid-af formulier', $email,'Lid-af formulier', "-f " . ' secretaris@nieuwedelft.nl');
+$resultT = mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', $email,'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
 
 // Verify that all emails were sent
 if (!$resultS || !$resultV || !$resultT) {
