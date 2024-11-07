@@ -39,21 +39,33 @@ $datum=$_POST["datum"] ?? 'niet ingevuld';
 $plaats=$_POST["plaats"] ?? 'niet ingevuld';
 $bedrag="€$donatiebedrag" ?? 'niet ingevuld';
 
-$email="Beste Secretaris, Thesaurier, VOL,
-$naam heeft zich afgemeld.
-Gegevens:
+$email=<<<EOD
+Beste Secretaris, Thesaurier, en VOL-bestuur,
+
+$naam heeft zich afgemeld als lid van De Bolk. De gegevens zijn als volgt:
+
+Adres:
 $adres
 $postcodeplaats
-$telefoon
-$mail
-Lidmaatschap: $lidmaatschap
-VOL: $vol
+
+Telefoon: $telefoon
+E-mailadres: $mail
+
+Gewenst lidmaatschap: $lidmaatschap
+Lid van de VOL: $vol
+
 Donatie: $donatie
 Donatiebedrag: $bedrag
 Donatiebestemming: $donatiebestemming
 Donatieverdeling: $donatieVerdelingTekst
-$courant
-$datum $plaats";
+
+Bolksche Courant ontvangen: $courant
+
+Datum: $datum
+Plaats: $plaats
+
+Dit is een geautomatiseerd bericht van afmelden.debolk.nl. Controleer de gegevens en neem contact op met de betrokkene als er iets niet klopt.
+EOD;
 
 // Send email
 $transport = Transport::fromDsn($_ENV['MAILER_DSN']);
