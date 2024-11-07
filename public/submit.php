@@ -1,5 +1,10 @@
 <?php
 
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mime\Address;
+use Symfony\Component\Mime\Email;
+
 require_once __DIR__ . '/../bootstrap.php';
 
 /*
@@ -34,7 +39,7 @@ $datum=$_POST["datum"] ?? 'niet ingevuld';
 $plaats=$_POST["plaats"] ?? 'niet ingevuld';
 $bedrag="€$donatiebedrag" ?? 'niet ingevuld';
 
-$email="Beste Secretaris,
+$email="Beste Secretaris, Thesaurier, VOL,
 $naam heeft zich afgemeld.
 Gegevens:
 $adres
@@ -48,23 +53,22 @@ Donatiebedrag: $bedrag
 Donatiebestemming: $donatiebestemming
 Donatieverdeling: $donatieVerdelingTekst
 $courant
-$datum $plaats
-";
+$datum $plaats";
 
-// Send emails
-$resultS = mail ('Secretaris <secretaris@nieuwedelft.nl>', 'Lid-af formulier', $email,'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
-$resultV = mail ('VOL <vol@nieuwedelft.nl>', 'Lid-af formulier', $email,'Lid-af formulier', "-f " . ' secretaris@nieuwedelft.nl');
-$resultT = mail ('Thesaurier <thesaurier@nieuwedelft.nl>', 'Lid-af formulier', $email,'Lid-af formulier', "-f " . 'secretaris@nieuwedelft.nl');
-
-// Verify that all emails were sent
-if (!$resultS || !$resultV || !$resultT) {
-    http_response_code(500);
-    echo "Failed to send all three emails";
-    echo '<pre>';
-    echo error_get_last();
-    echo '</pre>';
-    exit;
-}
+// Send email
+$transport = Transport::fromDsn($_ENV['MAILER_DSN']);
+$mailer = new Mailer($transport);
+$email = (new Email())
+    ->from(new Address('no-reply@debolk.nl'))
+    ->replyTo(new Address('secretaris@nieuwedelft.nl', 'Secretaris De Bolk'))
+    ->to(
+        new Address('secretaris@nieuwedelft.nl', 'Secretaris De Bolk'),
+        new Address('thesaurier@nieuwedelft.nl', 'Thesaurier De Bolk'),
+        new Address('vol@nieuwedelft.nl', 'VOL'),
+    )
+    ->subject('Lid-af formulier ' . $naam)
+    ->text($email);
+$mailer->send($email);
 
 // Send response
 echo 'Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.';

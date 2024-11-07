@@ -9,6 +9,7 @@ try {
     $dotenv->load();
     $dotenv->required('HCAPTCHA_SITEKEY')->notEmpty();
     $dotenv->required('HCAPTCHA_SECRET')->notEmpty();
+    $dotenv->required('MAILER_DSN')->notEmpty();
 }
 catch (ExceptionInterface $e) {
     http_response_code(500);
