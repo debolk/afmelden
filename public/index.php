@@ -58,7 +58,7 @@
 			<h3>Wil je op de hoogte blijven van de nieuws en gebeurtenissen op de Bolk?</b></h3>
 			<p>
 				<label>
-					<input type="checkbox" name="courant" value="courant">Ja ik wil de Bolksche Courant blijven
+					<input type="checkbox" name="courant" value="ja">Ja ik wil de Bolksche Courant blijven
 					ontvangen</label>
 			</p>
 
