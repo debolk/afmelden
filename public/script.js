@@ -39,7 +39,7 @@ $(document).ready(function () {
 	});
 
 	// Donation distrubution sub-form
-	$('#bedrag').change(function () {
+	$('#donatiebedrag').change(function () {
 		var donation = parseInt($(this).val());
 		$('#donatieverdeling').attr('max', donation);
 		$('#donatieverdeling').val(Math.round(donation / 2));

@@ -33,13 +33,19 @@ $datum=$_POST["datum"] ?? 'niet ingevuld';
 $plaats=$_POST["plaats"] ?? 'niet ingevuld';
 
 $donatie=$_POST['donatie'] ?? 'nee';
-$donatiebedrag=intval($_POST["bedrag"]) ?? 'niet ingevuld';
-$donatiebestemming=$_POST["donatiebestemming"] ?? 'niet ingevuld';
-$donatieverdelingBolk=$_POST["donatieverdeling"] ?? 'niet ingevuld';
-$donatieverdelingVOL=intval($_POST["bedrag"]) - intval($_POST["donatieverdeling"]);
-$donatieVerdelingTekst = $donatiebestemming == 'Verdeeld' ? "Bolk " . $donatieverdelingBolk . " VOL " . $donatieverdelingVOL : "n.v.t.";
-$bedrag="€$donatiebedrag" ?? 'niet ingevuld';
+if ($donatie === 'ja') {
+    $donatiebedrag=intval($_POST["donatiebedrag"]) ?? 'niet ingevuld';
+    $donatiebestemming=$_POST["donatiebestemming"] ?? 'niet ingevuld';
 
+    if ($donatiebestemming === 'Verdeeld') {
+        $donatieverdelingBolk = intval($_POST['donatieverdeling']);
+        $donatieverdelingVOL = $donatiebedrag - $donatieverdelingBolk;
+    }
+} else {
+    $donatie = 'nee';
+}
+
+// Construct the base email
 $email=<<<EOD
 Beste Secretaris, Thesaurier, en VOL-bestuur,
 
@@ -55,17 +61,42 @@ E-mailadres: $mail
 Gewenst lidmaatschap: $lidmaatschap
 Lid van de VOL: $vol
 
-Donatie: $donatie
-Donatiebedrag: $bedrag
-Donatiebestemming: $donatiebestemming
-Donatieverdeling: $donatieVerdelingTekst
+Bolksche Courant ontvangen: $courant \n\n
+EOD;
 
-Bolksche Courant ontvangen: $courant
+// Add donation information
+if ($donatie === 'ja') {
+    $email.=<<<EOD
+    Donatie: ja
+    Donatiebedrag: €$donatiebedrag \n
+    EOD;
 
+    if ($donatiebestemming === 'Verdeeld') {
+        $email.=<<<EOD
+        Donatiebestemming: Verdeeld
+        Donatieverdeling:
+        - De Bolk: €$donatieverdelingBolk
+        - VOL: €$donatieverdelingVOL \n\n
+        EOD;
+    }
+    else {
+        $email.=<<<EOD
+        Donatiebestemming: $donatiebestemming \n\n
+        EOD;
+    }
+}
+else {
+    $email.=<<<EOD
+    Donatie: nee \n\n
+    EOD;
+}
+
+// Add finalization information
+$email.=<<<EOD
 Datum: $datum
 Plaats: $plaats
 
-Dit is een geautomatiseerd bericht van afmelden.debolk.nl. Controleer de gegevens en neem contact op met de betrokkene als er iets niet klopt.
+Dit is een geautomatiseerd bericht van afmelden.debolk.nl. Controleer de gegevens en neem contact op met de betrokkene als er iets niet klopt. \n
 EOD;
 
 // Send email

@@ -91,9 +91,9 @@
 			</p>
 
 			<p>
-				<label for="bedrag">
+				<label for="donatiebedrag">
 					Namelijk
-					<input type="text" name="bedrag" id="bedrag" value="45" style="width: 2em;" /> euro per kwartaal
+					<input type="text" name="donatiebedrag" id="donatiebedrag" value="45" style="width: 2em;" /> euro per kwartaal
 				</label>
 			</p>
 
