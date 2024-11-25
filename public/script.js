@@ -59,6 +59,10 @@ $(document).ready(function () {
 		$('#donatieverdeling-voldeel').html(max - distribution);
 	});
 
+	// In some cases, the form is prefilled with unexpected values, e.g. after refreshing in Firefox
+	// so we update just in case
+	$('#donatiebedrag').trigger('change');
+
 	// Form submission using AJAX
 	$('#lid-af-form').submit(function (e) {
 		e.preventDefault();
