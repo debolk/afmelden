@@ -28,15 +28,16 @@ $telefoon=$_POST["telefoon"] ?? 'niet ingevuld';
 $mail=$_POST["email"] ?? 'niet ingevuld';
 $lidmaatschap=$_POST["lidmaatschap"] ?? 'niet ingevuld';
 $vol=$_POST["vol"] ?? 'niet ingevuld';
+$courant=$_POST['courant'] ?? 'nee';
+$datum=$_POST["datum"] ?? 'niet ingevuld';
+$plaats=$_POST["plaats"] ?? 'niet ingevuld';
+
 $donatie=$_POST['donatie'] ?? 'nee';
 $donatiebedrag=intval($_POST["bedrag"]) ?? 'niet ingevuld';
 $donatiebestemming=$_POST["donatiebestemming"] ?? 'niet ingevuld';
 $donatieverdelingBolk=$_POST["donatieverdeling"] ?? 'niet ingevuld';
 $donatieverdelingVOL=intval($_POST["bedrag"]) - intval($_POST["donatieverdeling"]);
 $donatieVerdelingTekst = $donatiebestemming == 'Verdeeld' ? "Bolk " . $donatieverdelingBolk . " VOL " . $donatieverdelingVOL : "n.v.t.";
-$courant=$_POST['courant'] ?? 'nee';
-$datum=$_POST["datum"] ?? 'niet ingevuld';
-$plaats=$_POST["plaats"] ?? 'niet ingevuld';
 $bedrag="€$donatiebedrag" ?? 'niet ingevuld';
 
 $email=<<<EOD
