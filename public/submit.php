@@ -45,9 +45,15 @@ if ($donatie === 'ja') {
     $donatie = 'nee';
 }
 
-// Construct the base email
+/*
+ * Construct the email
+ */
+
+$sendEmailToVOL = ($vol === 'ja' || $donatiebestemming === 'VOL' || $donatiebestemming === 'Verdeeld');
+$addressee = $sendEmailToVOL ? 'Secretaris, Thesaurier, en VOL-bestuur' : 'Secretaris en Thesaurier';
+
 $email=<<<EOD
-Beste Secretaris, Thesaurier, en VOL-bestuur,
+Beste $addressee,
 
 $naam heeft zich afgemeld als lid van De Bolk. De gegevens zijn als volgt:
 
@@ -105,8 +111,10 @@ $mailer = new Mailer($transport);
 $receipients = [
     new Address('secretaris@nieuwedelft.nl', 'Secretaris De Bolk'),
     new Address('thesaurier@nieuwedelft.nl', 'Thesaurier De Bolk'),
-    new Address('vol@nieuwedelft.nl', 'VOL'),
 ];
+if ($sendEmailToVOL) {
+    $receipients[] = new Address('vol@nieuwedelft.nl', 'VOL');
+}
 $email = (new Email())
     ->from(new Address('no-reply@debolk.nl'))
     ->replyTo(new Address('secretaris@nieuwedelft.nl', 'Secretaris De Bolk'))
