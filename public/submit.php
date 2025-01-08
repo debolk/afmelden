@@ -102,14 +102,15 @@ EOD;
 // Send email
 $transport = Transport::fromDsn($_ENV['MAILER_DSN']);
 $mailer = new Mailer($transport);
+$receipients = [
+    new Address('secretaris@nieuwedelft.nl', 'Secretaris De Bolk'),
+    new Address('thesaurier@nieuwedelft.nl', 'Thesaurier De Bolk'),
+    new Address('vol@nieuwedelft.nl', 'VOL'),
+];
 $email = (new Email())
     ->from(new Address('no-reply@debolk.nl'))
     ->replyTo(new Address('secretaris@nieuwedelft.nl', 'Secretaris De Bolk'))
-    ->to(
-        new Address('secretaris@nieuwedelft.nl', 'Secretaris De Bolk'),
-        new Address('thesaurier@nieuwedelft.nl', 'Thesaurier De Bolk'),
-        new Address('vol@nieuwedelft.nl', 'VOL'),
-    )
+    ->to(...$receipients)
     ->subject('Lid-af formulier ' . $naam)
     ->text($email);
 $mailer->send($email);
