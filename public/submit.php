@@ -19,7 +19,7 @@ if (!$hCaptchaResponse->isSuccess()) {
 }
 
 /*
- * Send emails with the form data
+ * Parse the form input
  */
 $naam=$_POST["voornaam"] ?? 'niet ingevuld';
 $adres=$_POST["adres"] ?? 'niet ingevuld';
@@ -105,7 +105,9 @@ Plaats: $plaats
 Dit is een geautomatiseerd bericht van afmelden.debolk.nl. Controleer de gegevens en neem contact op met de betrokkene als er iets niet klopt. \n
 EOD;
 
-// Send email
+/*
+ * Send the email
+ */
 $transport = Transport::fromDsn($_ENV['MAILER_DSN']);
 $mailer = new Mailer($transport);
 $receipients = [
@@ -123,5 +125,7 @@ $email = (new Email())
     ->text($email);
 $mailer->send($email);
 
-// Send response
+/*
+ * Confirmation response
+ */
 echo 'Bedankt voor het invullen van dit formulier. Als de gegevens verwerkt zijn, krijg je een lid-afbevestiging per e-mail.';
