@@ -74,7 +74,7 @@ EOD;
 if ($donatie === 'ja') {
     $email.=<<<EOD
     Donatie: ja
-    Donatiebedrag: €$donatiebedrag \n
+    Donatiebedrag: €$donatiebedrag per kwartaal\n
     EOD;
 
     if ($donatiebestemming === 'Verdeeld') {
