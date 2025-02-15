@@ -33,7 +33,7 @@
 					<input type="text" name="postcodeplaats" required /></label></p>
 			<p><label>Telefoon <br>
 					<input type="text" name="telefoon" required /><br></label></p>
-			<p><label>E-mail adres <br>
+			<p><label>E-mailadres <br>
 					<input type="text" name="email" required /></label></p>
 			<!-- Lid keuze -->
 			<h2> Lidmaatschap keuze </h2>
