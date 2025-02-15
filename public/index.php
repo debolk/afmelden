@@ -26,15 +26,15 @@
 
 			<h2> Gegevens </h2>
 			<p><label> Naam <br>
-					<input type="text" name="voornaam" /></label></p>
+					<input type="text" name="voornaam" required /></label></p>
 			<p><label>Adres<br>
-					<input type="text" name="adres" /></label></p>
+					<input type="text" name="adres" required /></label></p>
 			<p><label>Postcode en plaats <br>
-					<input type="text" name="postcodeplaats" /></label></p>
+					<input type="text" name="postcodeplaats" required /></label></p>
 			<p><label>Telefoon <br>
-					<input type="text" name="telefoon" /><br></label></p>
+					<input type="text" name="telefoon" required /><br></label></p>
 			<p><label>E-mail adres <br>
-					<input type="text" name="email" /></label></p>
+					<input type="text" name="email" required /></label></p>
 			<!-- Lid keuze -->
 			<h2> Lidmaatschap keuze </h2>
 			<div id="lid">
@@ -138,9 +138,9 @@
 				<h2> Verklaring </h2> <br>
 
 				<p><label>Datum <br>
-						<input type="date" id="datum" name="datum" value="<?= date('Y-m-d') ?>"> </label></p>
+						<input type="date" id="datum" name="datum" value="<?= date('Y-m-d') ?>" required> </label></p>
 				<p><label>Plaats <br>
-						<input type="text" name="plaats" value="Delft" /></label></p><br>
+						<input type="text" name="plaats" value="Delft" required /></label></p><br>
 				<p>
 					<!-- hCaptcha spam protection -->
 					<script src="https://js.hcaptcha.com/1/api.js" async defer></script>

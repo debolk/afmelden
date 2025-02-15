@@ -48,3 +48,11 @@ button {
    border-radius: 11px;
    color: white;
 }
+
+label.required-missing {
+   color: red;
+}
+
+input.required-missing {
+   border: 1px dashed red;
+}

@@ -9,10 +9,21 @@ $(document).ready(function () {
 		}
 	});
 
+	// Required fields highlight on blur
+	$('input[required]').blur(function () {
+		var missing = $(this).val() === '';
+		$(this).toggleClass('required-missing', missing);
+		$(this).parents('label').toggleClass('required-missing', missing);
+	});
+
 	// Page navigation
 	goToPage(1);
 
 	$('#topage2').click(function () {
+		if (!validateFields('#pag1')) {
+			return;
+		}
+
 		// Skip page 2 if user becomes ex-lid
 		if ($('input[name="lidmaatschap"]:checked').val() === 'oudlid') {
 			goToPage(2);
@@ -35,6 +46,9 @@ $(document).ready(function () {
 	});
 
 	$('#2topage3').click(function () {
+		if (!validateFields('#pag2')) {
+			return;
+		}
 		goToPage(3);
 	});
 
@@ -67,11 +81,14 @@ $(document).ready(function () {
 	$('#lid-af-form').submit(function (e) {
 		e.preventDefault();
 		var form = $(this);
+		if (!validateFields('#pag3')) {
+			return;
+		}
 
 		$.ajax({
 			type: form.attr('method'),
 			url: form.attr('action'),
-			data: form.serialize(), // serializes the form's elements.
+			data: form.serialize(),
 			success: function (data) {
 				goToPage(4);
 				// Show donation message if donation is for the VOL
@@ -89,4 +106,17 @@ $(document).ready(function () {
 function goToPage(number) {
 	$('#pag1, #pag2, #pag3, #pag4').hide();
 	$('#pag' + number).show();
+}
+
+function validateFields(pageSelector) {
+	// Blur every field on the page to show the visual highlights
+	$(pageSelector + ' input[required]').each(function () {
+		console.log(this);
+		$(this).blur();
+	});
+
+	var missing = $(pageSelector + ' input[required]').filter(function () {
+		return $(this).val() === '';
+	});
+	return missing.length === 0;
 }
