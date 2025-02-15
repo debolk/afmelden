@@ -75,7 +75,7 @@
 			<p>
 				Wil je lid worden van de VOL? <br>
 				<label>
-					<input type="radio" name="vol" value="ja">Ja</label><br>
+					<input type="radio" name="vol" value="ja" checked>Ja</label><br>
 				<label>
 					<input type="radio" name="vol" value="nee">Nee</label>
 			</p>
