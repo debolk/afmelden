@@ -25,18 +25,18 @@
 
 
 			<h2> Gegevens </h2>
-			<p><label> Naam* <br>
+			<p><label> Naam <br>
 					<input type="text" name="voornaam" /></label></p>
-			<p><label>Adres*<br>
+			<p><label>Adres<br>
 					<input type="text" name="adres" /></label></p>
-			<p><label>Postcode en plaats* <br>
+			<p><label>Postcode en plaats <br>
 					<input type="text" name="postcodeplaats" /></label></p>
 			<p><label>Telefoon <br>
 					<input type="text" name="telefoon" /><br></label></p>
 			<p><label>E-mail adres <br>
 					<input type="text" name="email" /></label></p>
 			<!-- Lid keuze -->
-			<h2> Lidmaatschap keuze* </h2>
+			<h2> Lidmaatschap keuze </h2>
 			<div id="lid">
 				<p>
 					<label>
@@ -45,7 +45,7 @@
 						<input type='radio' name='lidmaatschap' value='oudlid' />Oud-lid</label>
 				</p>
 			</div>
-			<input type="button" id="topage2" value="Doorgaan" /> *Beantwoord in ieder geval deze vragen.
+			<input type="button" id="topage2" value="Doorgaan" />
 		</section>
 
 
@@ -139,7 +139,7 @@
 
 				<p><label>Datum <br>
 						<input type="date" id="datum" name="datum" value="<?= date('Y-m-d') ?>"> </label></p>
-				<p><label>Plaats* <br>
+				<p><label>Plaats <br>
 						<input type="text" name="plaats" value="Delft" /></label></p><br>
 				<p>
 					<!-- hCaptcha spam protection -->
