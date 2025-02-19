@@ -32,6 +32,13 @@ $courant=$_POST['courant'] ?? 'nee';
 $datum=$_POST["datum"] ?? 'niet ingevuld';
 $plaats=$_POST["plaats"] ?? 'niet ingevuld';
 
+// If ex-member is selected, override all settings on page 2 so we don't show default in the mail
+if ($lidmaatschap === 'exlid') {
+    $vol = 'nee';
+    $courant = 'nee';
+    $donatie = 'nee';
+}
+
 $donatie=$_POST['donatie'] ?? 'nee';
 if ($donatie === 'ja') {
     $donatiebedrag=intval($_POST["donatiebedrag"]) ?? 'niet ingevuld';
