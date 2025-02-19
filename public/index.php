@@ -40,7 +40,7 @@
 			<div id="lid">
 				<p>
 					<label>
-						<input type='radio' name='lidmaatschap' value='exlid' checked />Ex-lid</label><br>
+						<input type='radio' name='lidmaatschap' value='exlid' />Ex-lid</label><br>
 					<label>
 						<input type='radio' name='lidmaatschap' value='oudlid' />Oud-lid</label>
 				</p>
