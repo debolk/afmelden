@@ -38,11 +38,11 @@
 			<!-- Lid keuze -->
 			<h2> Lidmaatschap keuze </h2>
 			<div id="lid">
-				<p>
+				<p class="radio-group">
 					<label>
-						<input type='radio' name='lidmaatschap' value='exlid' />Ex-lid</label><br>
+						<input type='radio' name='lidmaatschap' value='exlid' required />Ex-lid</label><br>
 					<label>
-						<input type='radio' name='lidmaatschap' value='oudlid' />Oud-lid</label>
+						<input type='radio' name='lidmaatschap' value='oudlid' required />Oud-lid</label>
 				</p>
 			</div>
 			<input type="button" id="topage2" value="Doorgaan" />
@@ -72,12 +72,12 @@
 				worden gedaan. De contributie voor de VOL bedraagt €15,- per jaar.
 			</p>
 
-			<p>
+			<p class="radio-group">
 				Wil je lid worden van de VOL? <br>
 				<label>
-					<input type="radio" name="vol" value="ja" checked>Ja</label><br>
+					<input type="radio" name="vol" value="ja" checked required>Ja</label><br>
 				<label>
-					<input type="radio" name="vol" value="nee">Nee</label>
+					<input type="radio" name="vol" value="nee" required>Nee</label>
 			</p>
 
 			<h2> Wil je doneren aan de Bolk? </h2>

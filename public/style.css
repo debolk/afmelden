@@ -53,6 +53,8 @@ label.required-missing {
    color: red;
 }
 
-input.required-missing {
+input.required-missing,
+.radio-group.required-missing {
    border: 1px dashed red;
+   
 }

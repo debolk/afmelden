@@ -10,10 +10,26 @@ $(document).ready(function () {
 	});
 
 	// Required fields highlight on blur
-	$('input[required]').blur(function () {
+	$('input[type=text][required]').on('blur', function () {
 		var missing = $(this).val() === '';
 		$(this).toggleClass('required-missing', missing);
-		$(this).parents('label').toggleClass('required-missing', missing);
+		$(this).parents('label').first().toggleClass('required-missing', missing);
+	});
+
+	$('input[type=radio][required]').on('blur', function () {
+		var selector = 'input[name="' + this.name + '"]';
+		var missing = !$(selector + ':checked').val();
+		if (missing) {
+			$(selector).addClass('required-missing');
+			$(selector).parents('.radio-group').addClass('required-missing');
+		} else {
+			$(selector).removeClass('required-missing');
+			$(selector).parents('.radio-group').removeClass('required-missing');
+		}
+	});
+	$('input[type=radio][required]').on('click', function () {
+		$(this).removeClass('required-missing');
+		$(this).parents('.radio-group').removeClass('required-missing');
 	});
 
 	// Page navigation
@@ -111,12 +127,26 @@ function goToPage(number) {
 function validateFields(pageSelector) {
 	// Blur every field on the page to show the visual highlights
 	$(pageSelector + ' input[required]').each(function () {
-		console.log(this);
 		$(this).blur();
 	});
 
-	var missing = $(pageSelector + ' input[required]').filter(function () {
+	// Check for missing required text fields
+	var missing = $(pageSelector + ' input[type=text][required]').filter(function () {
 		return $(this).val() === '';
+	});
+	if (missing.length > 0) {
+		return false;
+	}
+
+	// Check for missing required radio fields
+	var names = [];
+	var radios = $(pageSelector + ' input[type=radio][required]').each(function () {
+		if (names.indexOf(this.name) === -1) {
+			names.push(this.name);
+		}
+	});
+	var missing = names.filter(function (name) {
+		return !$('input[name="' + name + '"]:checked').val();
 	});
 	return missing.length === 0;
 }
